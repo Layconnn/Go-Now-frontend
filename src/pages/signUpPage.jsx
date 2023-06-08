@@ -1,8 +1,12 @@
 import React from 'react'
 import '../styles/pages/sign-up-page.scss';
 import Input from '../components/input';
+import { useNavigate } from 'react-router-dom';
+
 
 function SignUpPage() {
+
+    const router = useNavigate();
   return (
     <>
         <div className="main">
@@ -23,7 +27,7 @@ function SignUpPage() {
                         <Input placeholder='Email Address' />
                         <Input placeholder='Whatsapp Number' />
                     </div>
-                    <div className="main__container__content__btn">Go Now</div>
+                    <div className="main__container__content__btn" onClick={() => router('/task-option')}>Go Now</div>
                 </div>
             </div>
         </div>

@@ -1,10 +1,14 @@
-import SignUpPage from "./pages/signUpPage"
+// // import SignUpPage from "./pages/signUpPage"
+// import TaskPageOne from "./pages/taskPageOne";
+import Router from "./router/router";
 
 function App() {
 
   return (
     <>
-      <SignUpPage />
+      {/* <SignUpPage /> */}
+      {/* <TaskPageOne /> */}
+      <Router />
     </>
   )
 }

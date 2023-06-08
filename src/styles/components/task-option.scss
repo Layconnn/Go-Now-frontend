@@ -1,0 +1,60 @@
+.task{           
+    display: flex;
+    justify-content: space-between;
+    align-items: center;          
+    background: #FFFFFF;
+    border: 0.063rem solid #DEDEDE;
+    border-radius: 0.313rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 0.938rem;
+    padding-left: 1.25rem;
+    max-width: 28.688rem;
+    padding-right: 1.25rem;
+    width: 100%;
+    @media (max-width: 500px){
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        padding-left: 1rem;
+    }
+    h6{
+        font-family: 'Lexend';
+        font-weight: 600;
+        font-size: 1.063rem;
+        line-height: 1.313rem;
+        letter-spacing: -0.02em;
+        color: #1E1E1E;
+        @media (max-width: 600px){
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+    }
+    h6:hover{
+        color: white;
+    }
+    h5{
+        font-family: 'Lexend';
+        font-weight: 400;
+        font-size: 0.813rem;
+        line-height: 1rem;
+        letter-spacing: -0.02em;
+        color: #6E768A;
+        padding-bottom: 0.313rem;
+        @media (max-width: 500px){
+            display: none;
+        }
+    }
+    h5:hover{
+        color: white;
+    }
+    img{
+        @media (max-width: 500px){
+            width: 1.25rem;
+            height: 2.25rem;
+        }
+    }
+}
+.task:hover{
+    background-color: #0B88DF;
+    color: white;
+}
