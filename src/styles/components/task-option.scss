@@ -41,7 +41,9 @@
         color: #6E768A;
         padding-bottom: 0.313rem;
         @media (max-width: 500px){
-            display: none;
+            font-size: 0.6rem;
+            padding-bottom: 0;
+            line-height: unset;
         }
     }
     h5:hover{
