@@ -1,0 +1,21 @@
+input{
+    max-width: 28.688rem;
+    width: 100%;
+    padding: 1.625rem 0 1.625rem 1.25rem;
+    background: #FFFFFF;
+    border: 0.063rem solid #DEDEDE;
+    border-radius: 0.313rem;
+    margin-bottom: 1rem;
+    outline: none;
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 1.063rem;
+    line-height: 1.313rem;
+    letter-spacing: -0.02em;
+    color: #6E768A;
+    @media (max-width: 500px){
+        padding: 1rem 0 1rem 1.25rem;
+        font-size: 0.763rem;
+        line-height: unset; 
+    }
+}
