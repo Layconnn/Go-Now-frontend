@@ -24,8 +24,8 @@ function SignUpPage() {
                             <h6>Last Name</h6>
                             <h5>Joe</h5>
                         </div>
-                        <Input placeholder='Email Address' />
-                        <Input placeholder='Whatsapp Number' />
+                        <Input text='Email Address' />
+                        <Input text='Whatsapp Number' />
                     </div>
                     <div className="main__container__content__btn" onClick={() => router('/task-option')}>Go Now</div>
                 </div>
