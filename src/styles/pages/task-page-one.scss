@@ -1,8 +1,5 @@
 .start{
     background: #F6F8FA;
-    // @media (max-width: 500px){
-    //     height: 100vh;
-    // }
     &__container{
         display: flex;
         flex-direction: column;
@@ -15,9 +12,6 @@
         @media (max-width: 600px){
             padding: unset;
             // height: 100vh;
-        }
-        @media (max-width: 475px){
-            height: 100vh;
         }
         h3{
             color: #1E1E1E;
@@ -114,9 +108,6 @@
                             font-size: 0.7rem;
                         }
                     }
-                    h6:hover{
-                        color: white;
-                    }
                     }
                     h5{
                         font-family: 'Lexend';
@@ -132,9 +123,6 @@
                             line-height: unset;
                         }
                     }
-                    h5:hover{
-                        color: white;
-                    }
                     img{
                         @media (max-width: 500px){
                             width: 1.25rem;
@@ -142,9 +130,11 @@
                         }
                     }
                 }
+                &__inputs:hover * {
+                    color: white;
+                }
                 &__inputs:hover{
                     background-color: #0B88DF;
-                    color: white;
                 }
                 &__btn{
                     display: flex;

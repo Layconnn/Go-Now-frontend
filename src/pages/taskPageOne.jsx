@@ -1,8 +1,23 @@
 import React from 'react'
 import '../styles/pages/task-page-one.scss';
 import TaskOption from '../components/taskOption';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function TaskPageOne() {
+
+  const [isHovered, setIsHovered] = useState(true);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(true);
+  };
+
+  const router = useNavigate();
+
   return (
     <>
         <div className="start">
@@ -30,7 +45,7 @@ function TaskPageOne() {
                     h6="Multiple tasks in a multiple location"
                     h5="Sample question goes here "
                     />
-                    <div className="start__container__content__btn">continue</div>
+                    <div className="start__container__content__btn" onClick={() => router('/task-page')}>continue</div>
                 </div>
             </div>
         </div>

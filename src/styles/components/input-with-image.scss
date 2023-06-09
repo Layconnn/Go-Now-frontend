@@ -1,7 +1,7 @@
-.task{           
+.image-input{
     display: flex;
     justify-content: space-between;
-    align-items: center;          
+    align-items: center;
     background: #FFFFFF;
     border: 0.063rem solid #DEDEDE;
     border-radius: 0.313rem;
@@ -9,56 +9,49 @@
     padding-bottom: 1rem;
     padding-top: 0.938rem;
     padding-left: 1.25rem;
+    padding-right: 1.5rem;
     max-width: 28.688rem;
-    padding-right: 1.25rem;
     width: 100%;
     @media (max-width: 500px){
-        padding-bottom: 0.5rem;
         padding-top: 0.5rem;
-        padding-left: 1rem;
-    }
-    h6{
-        font-family: 'Lexend';
-        font-weight: 600;
-        font-size: 1.063rem;
-        line-height: 1.313rem;
-        letter-spacing: -0.02em;
-        color: #1E1E1E;
-        @media (max-width: 600px){
-            font-weight: 600;
-            font-size: 0.7rem;
-        }
-    }
-    h6:focus{
-        color: white;
+        padding-left: 0.8rem;
+        padding-bottom: 0.8rem;
     }
     h5{
         font-family: 'Lexend';
         font-weight: 400;
         font-size: 0.813rem;
         line-height: 1rem;
+        outline: none;
+        border: 2px solid white;
         letter-spacing: -0.02em;
         color: #6E768A;
         padding-bottom: 0.313rem;
         @media (max-width: 500px){
-            font-size: 0.6rem;
-            padding-bottom: 0;
+            font-size: 0.613rem;
             line-height: unset;
+            padding-bottom: 0;
         }
     }
-    h5:hover{
-        color: white;
+    &__input-two{
+        font-family: 'Lexend';
+        font-weight: 400;
+        font-size: 1.063rem;
+        display: block;
+        outline: none;
+        border: 2px solid white;
+        line-height: 1.313rem;
+        letter-spacing: -0.02em;
+        color: #1E1E1E;
+        @media (max-width: 500px){
+            line-height: unset;
+            font-size: 0.8rem;
+        }
     }
-    img{
+    &__image{
         @media (max-width: 500px){
             width: 1.25rem;
-            height: 2.25rem;
+            height: 1.25rem;
         }
     }
-}
-.task:hover * {
-    color: white;
-}
-.task:hover{
-    background: #0B88DF;
 }

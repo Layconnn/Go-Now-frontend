@@ -1,8 +1,4 @@
 .main{
-    background: #F6F8FA;
-    @media (max-width: 475px){
-        height: 100vh;
-    }
     &__container{
         display: flex;
         flex-direction: column;
@@ -14,9 +10,6 @@
         }
         @media (max-width: 600px){
             padding: unset;
-        }
-        @media (max-width: 475px){
-            height: 100vh;
         }
         // background: #FFFFFF;
         // box-shadow: 0 0.25rem 2.125rem rgba(0, 0, 0, 0.05);
