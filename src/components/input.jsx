@@ -4,7 +4,7 @@ import '../styles/components/input.scss';
 function Input(props) {
   return (
     <>
-        <div className='game'>{props.text}</div>
+        <input className='game' type={props.type} placeholder={props.placeholder} />
     </>
   )
 }

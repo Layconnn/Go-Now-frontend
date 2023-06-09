@@ -12,10 +12,13 @@
     font-size: 1.063rem;
     line-height: 1.313rem;
     letter-spacing: -0.02em;
-    color: #6E768A;
+    color: black;
     @media (max-width: 500px){
-        padding: 1rem 0 1rem 1.25rem;
+        padding: 1rem 0 1rem 1rem;
         font-size: 0.763rem;
         line-height: unset; 
     }
+}
+.game::placeholder{
+    color: #6E768A;
 }
