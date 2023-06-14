@@ -25,12 +25,14 @@ function TaskPageOne() {
                 <h3>GoNow</h3>
                 <div className="start__container__content">
                     <img src="./image/gee.svg" alt="" />
-                    <h4>Create a task</h4>
+                    <h1>Create a task</h1>
+                    <h2>Single task with one location</h2>
                     <TaskOption 
                     h6="Single task with one location "
                     h5="Sample question goes here "
+                    onClick={() => router('/task-page')}
                     />
-                    <div className="start__container__content__inputs">
+                    <div className="start__container__content__inputs"  onClick={() => router('/task-page')}>
                         <div className="start__container__content__inputs__body">
                             <h6>Single task with many locations</h6>
                             <h5>Sample question goes here </h5>

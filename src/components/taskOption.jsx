@@ -21,6 +21,7 @@ function TaskOption(props) {
           className={isHovered ? 'task' : ''}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          onClick={props.onClick}
         >
             <div>
                 <h6>{props.h6}</h6>
