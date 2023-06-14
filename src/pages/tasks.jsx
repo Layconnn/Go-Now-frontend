@@ -21,7 +21,7 @@ function Tasks() {
                       h5='Title'
                       placeholder='Kill the president'
                     />
-                     <div className="tasks-page__container__contents__input-one">
+                     {/* <div className="tasks-page__container__contents__input-one">
                       <div>
                         <h5>Location</h5>
                         <input
@@ -31,14 +31,22 @@ function Tasks() {
                         />
                       </div>
                       <img src='./image/locate.svg' alt="" className='tasks-page__container__contents__input-one__image' />
-                    </div>
+                    </div> */}
                     <InputWithImage 
-                    placeholder='Time'
+                    h5='Location'
+                    placeholder="Aso Rock"
+                    placeholderColor='black'
+                    src='./image/locate.svg'
+                    />
+                    <InputWithImage
+                    h5="Time" 
+                    placeholder='Set time'
                     placeholderColor='black'
                     src='./image/clock.svg'
                     /> 
                     <InputWithImage 
-                    placeholder='Date'
+                    h5='Date'
+                    placeholder='Task Date'
                     src='./image/calender.svg'
                     placeholderColor='black'
                     /> 

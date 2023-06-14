@@ -10,19 +10,29 @@ function InputWithImage({h5, placeholderColor, placeholder, src}) {
     setAdditionalText(event.target.value);
   };
 
+
+  const [showElement, setShowElement] = useState(false);
+
+
+  const handleClick = () => {
+    setShowElement(true);
+  };
+
   return (
     <>
-      <div className='image-input'>
+      <div className={`image-input ${showElement ? 'show-content' : ''}`}  onClick={handleClick} >
         <div>
             <h5>{h5}</h5>
-            <input
+            {showElement
+            &&
+              <input
                 type="text"
                 value={additionalText}
                 placeholder={placeholder}
                 onChange={handleAdditionalTextChange}
-                className='image-input__input-two'
+                className={`image-input__input-two ${showElement ? 'show-content__input-two' : ''}`}
                 style={{ color: placeholderColor }}
-            />
+            />}
         </div>
         <img src={src} alt="" className='image-input__image' />
     </div>

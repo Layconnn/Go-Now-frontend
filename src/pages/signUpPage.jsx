@@ -43,7 +43,7 @@ function SignUpPage() {
             h5:'Last Name',
             // pattern: `^[^\s@]+@[^\s@]+\.[^\s@]+$`,
             pattern: '^[a-zA-Z]{3,}$',
-            errorMessage: 'First name should be at least 3 letters',
+            errorMessage: 'Last name should be at least 3 letters',
             placeholder:'Joe',
             required: true,
             // errorMessage: error 
@@ -57,7 +57,7 @@ function SignUpPage() {
             // pattern: '^[^\s@]+@[^\s@]+\.[^\s@]+$',
             pattern: '/^(?![.-])((?![_.-][_.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}$/',
             placeholder:'johndoe@mail.com',
-            errorMessage: 'First name should be at least 3 letters',
+            errorMessage: 'It is not a valid email',
             // errorMessage: error,
             required: true
         },

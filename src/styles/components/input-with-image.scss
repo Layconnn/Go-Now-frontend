@@ -20,7 +20,7 @@
     h5{
         font-family: 'Lexend';
         font-weight: 400;
-        font-size: 0.813rem;
+        font-size: 1.063rem;
         line-height: 1rem;
         outline: none;
         border: 2px solid white;
@@ -48,10 +48,39 @@
             font-size: 0.8rem;
         }
     }
+    &__input-two::placeholder{
+        color: black;
+    }
     &__image{
         @media (max-width: 500px){
             width: 1.25rem;
             height: 1.25rem;
         }
+    }
+}
+
+.show-content{
+    padding-top: 0.938rem;
+    padding-bottom: 1rem;
+    @media (max-width: 500px){
+        padding-top: 0.538rem;
+        padding-bottom: 0.7rem;
+    }
+}
+
+.show-content__input-two{
+    display: block;
+    transition: ease-in-out 0.3s;
+    @media (max-width: 500px){
+        font-size: 0.6rem;
+    }
+}
+
+.show-content h5{
+    transform: translateY(-0.313rem);
+    font-size: 0.813rem;
+    @media (max-width: 500px){
+        transform: translateY(-0.19rem);
+        font-size: 0.5rem;
     }
 }
