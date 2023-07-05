@@ -26,26 +26,28 @@ function TaskPageOne() {
                 <div className="start__container__content">
                     <img src="./image/gee.svg" alt="" />
                     <h1>Create a task</h1>
-                    <h2>Single task with one location</h2>
+                    <h2>Select a type of task you want to create</h2>
                     <TaskOption 
-                    h6="Single task with one location "
+                    h6="Single task in one location "
                     h5="Sample question goes here "
                     onClick={() => router('/task-page')}
                     />
-                    <div className="start__container__content__inputs"  onClick={() => router('/task-page')}>
+                    <div className="start__container__content__inputs"  onClick={() => router('/task-creation5')}>
                         <div className="start__container__content__inputs__body">
-                            <h6>Single task with many locations</h6>
+                            <h6>Single task in Multiple locations</h6>
                             <h5>Sample question goes here </h5>
                         </div>
                         <img src="./image/check.svg" alt="" />
                     </div>
                     <TaskOption 
-                    h6="Multiple tasks in a single location"
+                    h6="Multiple tasks in one location"
                     h5="Sample question goes here"
+                    onClick={() => router('/task-creation')}
                     />
                     <TaskOption 
-                    h6="Multiple tasks in a multiple location"
+                    h6="Multiple tasks in Multiple locations"
                     h5="Sample question goes here "
+                    onClick={() => router('/task-creation4')}
                     />
                     <div className="start__container__content__btn" onClick={() => router('/task-page')}>continue</div>
                 </div>

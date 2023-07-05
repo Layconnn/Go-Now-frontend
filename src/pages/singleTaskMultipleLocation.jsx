@@ -1,22 +1,10 @@
-import {React, useEffect, useState} from 'react'
+import React from 'react'
 import '../styles/pages/tasks.scss';
 import InputWithPlaceholder from '../components/inputWithPlaceholder.jsx';
 import InputWithImage from '../components/inputWithImage.jsx';
 import { useNavigate } from 'react-router-dom';
 
-function Tasks() {
-  const [text, setText] = useState('Initial Text');
-  
-  useEffect(() => {
-    const currentTime = new Date().toLocaleString('en-US', { timeZone: 'Africa/Lagos' });
-    const currentHour = new Date(currentTime).getHours();
-
-    if (currentHour >= 14) {
-      setText('Task may take up to 24 hours to complete');
-    }else{
-      setText('Task may take up to 36 hours to complete')
-    }
-  }, []);
+function SingleTaskMultipleLocation() {
 
   const router = useNavigate()
 
@@ -28,7 +16,7 @@ function Tasks() {
                 <div className="tasks-page__container__contents">
                   <img src="./image/gee.svg" alt="" className='tasks-page__container__contents__image' />
                   <h4>Create a task</h4>
-                  <h2>Single task in one location</h2>
+                  <h2>Single task in Multiple locations</h2>
                   <form  className="tasks-page__container__contents__inputs"></form>
                   <div className="tasks-page__container__contents__inputs__fname">
                     <InputWithPlaceholder 
@@ -47,7 +35,7 @@ function Tasks() {
                       <img src='./image/locate.svg' alt="" className='tasks-page__container__contents__input-one__image' />
                     </div> */}
                       <InputWithImage 
-                      h5='Location'
+                      h5='Locations'
                       src='./image/locate.svg'
                       />
                       <InputWithImage
@@ -63,7 +51,7 @@ function Tasks() {
                       <textarea type="text" placeholder='Description your task in simple and plain english' className='tasks-page__container__contents__text-area__item1' />
                     </div>
                     <div className="tasks-page__container__contents__btn" >continue</div>
-                    <div className="tasks-page__container__contents__info">{text}</div>
+                    <div className="tasks-page__container__contents__info">Task may take up to 4 hours to complete</div>
                 </div>
             </div>
         </div>
@@ -71,4 +59,4 @@ function Tasks() {
   )
 }
 
-export default Tasks
+export default SingleTaskMultipleLocation

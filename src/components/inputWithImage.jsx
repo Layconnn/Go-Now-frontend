@@ -29,6 +29,7 @@ function InputWithImage({h5, placeholderColor, placeholder, src}) {
                 type="text"
                 value={additionalText}
                 placeholder={placeholder}
+                autoFocus
                 onChange={handleAdditionalTextChange}
                 className={`image-input__input-two ${showElement ? 'show-content__input-two' : ''}`}
                 style={{ color: placeholderColor }}
