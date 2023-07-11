@@ -163,7 +163,6 @@
                 background: #FFFFFF;
                 border: 0.063rem solid #DEDEDE;
                 border-radius: 0.313rem;
-                margin-bottom: 1.875rem;
                 padding-bottom: 1rem;
                 padding-top: 0.938rem;
                 padding-left: 1.25rem;
@@ -205,6 +204,7 @@
                     letter-spacing: -0.02em;
                     color: #1E1E1E;
                     width: 100%;
+                    resize: none;
                     height: 8.125rem;
                     @media (max-width: 500px){
                         line-height: unset;
@@ -232,6 +232,8 @@
                 font-weight: 400;
                 font-size: 1.063rem;
                 line-height: 1.313rem;
+                border: 2px solid white;
+                outline: none;
                 text-align: center;
                 letter-spacing: -0.02em;
                 cursor: pointer;
@@ -240,6 +242,24 @@
                     height: 3rem;
                     margin-top: 0;
                     font-size: 0.8rem;
+                }
+                &__loading{
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid #FFF;
+                    border-bottom-color: transparent;
+                    border-radius: 50%;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    animation: rotation 1s linear infinite;
+                    @keyframes rotation {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
                 }
             }
             &__info{
@@ -276,4 +296,18 @@
 }
 .tasks-page__container__contents__input-one:hover .tasks-page__container__contents__input-one__main{
     display: block;
+}
+.error{
+    color: red;
+    font-family: 'Lexend';
+    margin-bottom: 1rem;
+    padding-top: 0.8rem;
+    transition: ease-in-out .5s;
+    @media (max-width: 768px){
+        font-size: 0.513rem;
+        padding-top: 0.5rem;
+    }
+    @media (max-width: 500px){
+        padding-top: 0.3rem;
+    }
 }

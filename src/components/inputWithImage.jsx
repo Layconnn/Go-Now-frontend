@@ -1,44 +1,51 @@
-import React from 'react'
-import { useState } from 'react';
-import '../styles/components/input-with-image.scss';
+import React from "react";
+import { useState } from "react";
+import "../styles/components/input-with-image.scss";
 
-function InputWithImage({h5, placeholderColor, placeholder, src}) {
-
-  const [additionalText, setAdditionalText] = useState('');
-  
-  const handleAdditionalTextChange = (event) => {
-    setAdditionalText(event.target.value);
-  };
-
-
+function InputWithImage(props) {
   const [showElement, setShowElement] = useState(false);
-
 
   const handleClick = () => {
     setShowElement(true);
   };
 
+  const change = props.value;
+
+  const handleBlur = () => {
+    if (change === "") {
+      setShowElement(false);
+    } else {
+      ("");
+    }
+  };
+
   return (
     <>
-      <div className={`image-input ${showElement ? 'show-content' : ''}`}  onClick={handleClick} >
+      <div
+        className={`image-input ${showElement ? "show-content" : ""}`}
+        onClick={handleClick}
+      >
         <div>
-            <h5>{h5}</h5>
-            {showElement
-            &&
-              <input
-                type="text"
-                value={additionalText}
-                placeholder={placeholder}
-                autoFocus
-                onChange={handleAdditionalTextChange}
-                className={`image-input__input-two ${showElement ? 'show-content__input-two' : ''}`}
-                style={{ color: placeholderColor }}
-            />}
+          <h5>{props.h5}</h5>
+          {showElement && (
+            <input
+              name={props?.name}
+              type={props.type}
+              value={change}
+              placeholder={props.placeholder}
+              onChange={props.onChange}
+              onBlur={handleBlur}
+              autoFocus
+              className={`image-input__input-two ${
+                showElement ? "show-content__input-two" : ""
+              }`}
+            />
+          )}
         </div>
-        <img src={src} alt="" className='image-input__image' />
-    </div>
+        <img src={props.src} alt="" className={`image-input__image ${showElement ? "show-content__image" : ""}`} />
+      </div>
     </>
-  )
+  );
 }
 
-export default InputWithImage
+export default InputWithImage;

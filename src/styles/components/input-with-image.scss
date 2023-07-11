@@ -5,7 +5,6 @@
     background: #FFFFFF;
     border: 0.063rem solid #DEDEDE;
     border-radius: 0.313rem;
-    margin-bottom: 1rem;
     padding-bottom: 1.625rem;
     padding-top: 1.625rem;
     padding-left: 1.25rem;
@@ -42,10 +41,67 @@
         border: 2px solid white;
         line-height: 1.313rem;
         letter-spacing: -0.02em;
+        max-width: 25.938rem;
+        width: 100%;
         color: #1E1E1E;
         @media (max-width: 500px){
             line-height: unset;
             font-size: 0.8rem;
+        }
+    }
+    &__input-two::after {
+        width: 0.938rem; /* Adjust the width and height as per your icon dimensions */
+        height: 0.938rem;
+        @media (max-width: 500px){
+            width: 0.625rem;
+            height: 0.625rem;
+        }
+    }
+    &__input-two[type="time" i] {
+        font-family: 'Lexend';
+        padding-inline-start: 1px;
+        cursor: default;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        overflow: hidden;
+        padding: 0px;
+        max-width: 26rem;
+        width: 500%;
+        @media (max-width: 500px){
+            max-width: 14rem;
+        }
+    }
+    &__input-two[type="date" i] {
+        font-family: 'Lexend';
+        padding-inline-start: 1px;
+        cursor: default;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        overflow: hidden;
+        padding: 0px;
+        max-width: 26rem;
+        width: 500%;
+        @media (max-width: 500px){
+            max-width: 14rem;
+            width: 320%;
+        }
+    }
+    &__input-two[type="text" i] {
+        font-family: 'Lexend';
+        padding-inline-start: 1px;
+        cursor: default;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        overflow: hidden;
+        padding: 0px;
+        max-width: 26rem;
+        width: 500%;
+        @media (max-width: 500px){
+            max-width: 14rem;
+            width: 320%;
         }
     }
     &__input-two::placeholder{
@@ -76,6 +132,13 @@
     }
 }
 
+// .show-content__input-two::after {
+//     right: 300px; /* Adjust this value to position the icon */
+//     width: 15px; /* Adjust the width and height as per your icon dimensions */
+//     height: 15px;
+//     /* Additional styling properties for the icon */
+// }
+
 .show-content h5{
     transform: translateY(-0.313rem);
     font-size: 0.813rem;
@@ -84,3 +147,37 @@
         font-size: 0.5rem;
     }
 }
+
+.show-content__image{
+    display: none;
+}
+// input[type="date" i] {
+//     font-family: monospace;
+//     padding-inline-start: 1px;
+//     cursor: default;
+//     align-items: center;
+//     justify-content: space-between;
+//     display: flex;
+//     overflow: hidden;
+//     padding: 0px;
+//     max-width: 26rem;
+//     width: 500%;
+//     @media (max-width: 500px){
+//         width: 320%;
+//     }
+// }
+// &__input-two[type="time" i] {
+//     font-family: monospace;
+//     padding-inline-start: 1px;
+//     cursor: default;
+//     align-items: center;
+//     justify-content: space-between;
+//     display: flex;
+//     overflow: hidden;
+//     padding: 0px;
+//     max-width: 26rem;
+//     width: 320%;
+//     @media (max-width: 500px){
+//         width: 320%;
+//     }
+// }

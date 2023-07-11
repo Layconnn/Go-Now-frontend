@@ -1,10 +1,20 @@
-import React from 'react'
+import {React, useEffect, useState } from 'react'
 import '../styles/pages/tasks.scss';
 import InputWithPlaceholder from '../components/inputWithPlaceholder.jsx';
 import InputWithImage from '../components/inputWithImage.jsx';
 import { useNavigate } from 'react-router-dom';
 
 function SingleTaskMultipleLocation() {
+  const [text, setText] = useState('Task may take up to 36 hours to complete');
+  
+  useEffect(() => {
+    const currentTime = new Date();
+    const currentHour = currentTime.getHours();
+    
+    if(currentHour >= 14){
+      setText('Task may take up to 24 hours to complete')
+    }
+  }, []);
 
   const router = useNavigate()
 
@@ -35,7 +45,7 @@ function SingleTaskMultipleLocation() {
                       <img src='./image/locate.svg' alt="" className='tasks-page__container__contents__input-one__image' />
                     </div> */}
                       <InputWithImage 
-                      h5='Locations'
+                      h5='Addresses'
                       src='./image/locate.svg'
                       />
                       <InputWithImage
@@ -51,7 +61,7 @@ function SingleTaskMultipleLocation() {
                       <textarea type="text" placeholder='Description your task in simple and plain english' className='tasks-page__container__contents__text-area__item1' />
                     </div>
                     <div className="tasks-page__container__contents__btn" >continue</div>
-                    <div className="tasks-page__container__contents__info">Task may take up to 4 hours to complete</div>
+                    <div className="tasks-page__container__contents__info">{text}</div>
                 </div>
             </div>
         </div>

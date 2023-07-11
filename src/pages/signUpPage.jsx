@@ -8,16 +8,17 @@ import Validation from '../components/validation';
 import CountryInput from '../components/countryInput';
 
 function SignUpPage() {
+    const [isLoading, setIsLoading] = useState(false);
+    const [triedToSubmit, setTriedToSubmit] = useState(false);
     // const [firstNameError, setFirstNameError] = useState("");
     // const [lastNameError, setLastNameError] = useState("");
     // const [emailError, setEmailError] = useState("");
     // const [whatsappError, setWhatsappError] = useState("");
-    const url = 'https://api-staging.liveable.ng/go/landing';
     const [values, setValues] = useState({
-        name: "",
-        phone: "",
+        first_name: "",
+        last_name: "",
         email: "",
-        is_whatsapp: ""
+        whatsapp_number: ""
     })
 
     // const error = "";
@@ -25,6 +26,8 @@ function SignUpPage() {
     const handleInput = (e) => {
         setValues({...values, [e.target.name]: e.target.value })
     }
+
+    const email_pattern = /^(?![.-])((?![_.-][_.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}$/;
 
     // const inputs = [
     //     {
@@ -88,20 +91,30 @@ function SignUpPage() {
 
     const router = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
+        setTriedToSubmit(true);
         e.preventDefault();
         setErrors(Validation(values));
-        Api.post(url, {
-            name: values.name,
-            phone: values.phone,
-            email: values.email,
-            is_whatsapp: values.is_whatsapp
-          } )
-          .then((response) => {console.log(response.data)} )
-          .catch(err => console.log(err));
-        if(values.name && values.is_whatsapp && values.email && values.phone){
-            router('/task-option')
-        } else if(!values.name && !values.is_whatsapp && !values.email && !values.phone){
+       
+        if(values.first_name && values.whatsapp_number && values.email && values.last_name){
+            setIsLoading(true);
+            try{
+                const res = await Api.post('http://localhost:5000/signup', {
+                    first_name: values.first_name,
+                    last_name: values.last_name,
+                    email: values.email,
+                    whatsapp_number: values.whatsapp_number,
+                  })
+                console.log(res.data)
+              }
+              catch(err){
+                console.log(err);
+              }
+              finally{
+                router('/task-option')
+                setIsLoading(false)
+              }
+        } else if(!values.first_name && !values.whatsapp_number && !values.email && !values.last_name){
             errors
         } else{
             router('./task-option')
@@ -121,25 +134,32 @@ function SignUpPage() {
                         <div className="main__container__content__inputs">
                             <div className="main__container__content__inputs__fname">
                                 <InputWithPlaceholder 
-                                name= 'name'
+                                name= 'first_name'
                                 type='text'
-                                h5='First Name'
                                 onChange= {handleInput}
-                                value= {values.name}
+                                value= {values.first_name}
+                                h5='First Name'
                                 />
-                                {errors.name && <span className='error' >{errors.name}</span> }
+                                {triedToSubmit && !values.first_name
+                                &&
+                                <span className="error">{errors.first_name}</span>
+                                }
+                                {/* {errors.name && <span className='error' >{errors.first_name}</span> } */}
                             </div>
 
                             <div className="main__container__content__inputs__lname">
                                 <InputWithPlaceholder 
-                                name= 'is_whatsapp'
+                                name= 'last_name'
                                 type='text'
-                                h5='Last Name'
-                                value= {values.is_whatsapp}
+                                value= {values.last_name}
                                 onChange= {handleInput}
+                                h5='Last Name'
                                 // pattern= '^[a-zA-Z]{3,}$'
                                 />
-                                {errors.is_whatsapp && <span className='error'>{errors.is_whatsapp}</span> }
+                                {triedToSubmit && !values.last_name
+                                &&
+                                <span className="error">{errors.last_name}</span>
+                                }
                             </div>
                            
                            <div className="main__container__content__inputs__email">
@@ -151,7 +171,11 @@ function SignUpPage() {
                                 value= {values.email}
                                 h5='Email'
                                 />
-                                {errors.email && <span className='error' >{errors.email}</span> }
+                                {triedToSubmit && !email_pattern.test(values.email)
+                                &&
+                                    <span className="error">{errors.email}</span>
+                                }
+                                {/* {errors.email && <span className='error' >{errors.email}</span> } */}
                            </div>
                            
                            {/* <div className="main__container__content__inputs__phone">
@@ -170,15 +194,28 @@ function SignUpPage() {
                                 <CountryInput 
                                         name= 'phone'
                                         h5= 'Whatsapp Number'
-                                        onChange= {(value) => setValues({...values, phone: value})}
+                                        onChange= {(value) => setValues({...values, whatsapp_number: value})}
                                         placeholder ='90100000000'
                                         type='tel'
-                                        value= {values.phone}  
+                                        value= {values.whatsapp_number}  
                                 />
-                                  {errors.phone && <span className='error' >{errors.phone}</span> }
+                                 {triedToSubmit && values.whatsapp_number?.length !== 14
+                                &&
+                                    <span className="error">{errors.whatsapp_number}</span>
+                                }
+                                  {/* {errors.whatsapp_number && <span className='error' >{errors.whatsapp_number}</span> } */}
+
                            </div>
                         </div>
-                        <button type='submit' className="main__container__content__btn" onClick={() => {!errors ? router('/task-option') : errors}} >Go Now</button>
+                        <button type='submit' className="main__container__content__btn">
+                        {
+                            isLoading && values.first_name && values.email && values.last_name && values.whatsapp_number
+                            ?
+                            <div className="main__container__content__btn__loading"></div>
+                            :
+                            'Go Now'
+                        }
+                        </button>
                     </form>
                 </div>
             </div>
